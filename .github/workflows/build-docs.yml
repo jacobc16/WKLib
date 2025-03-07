@@ -11,12 +11,14 @@ env:
   INSTANCE: 'Writerside/w'
   DOCKER_VERSION: '243.22562'
 
+permissions:
+  contents: read
+  id-token: write
+  pages: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions:
-      id-token: write
-      contents: read
     outputs:
       algolia_artifact: ${{ steps.define-ids.outputs.algolia_artifact }}
       artifact: ${{ steps.define-ids.outputs.artifact }}
